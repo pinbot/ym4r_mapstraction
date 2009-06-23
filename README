@@ -46,8 +46,11 @@ And you would have inside the RJS template for the action:
 Here I first clear the map of all markers. Then I add the marker. Note that the +marker_init+ is not used anymore since, as its name indicates, this method is only for the initialization of the map.
 
 ==Installation
-Install like any other Rails plugin:
-	ruby script/plugin install svn://rubyforge.org/var/svn/ym4r/Plugins/Mapstraction/trunk/ym4r_mapstraction
+
+cd my_rails/vendor
+git clone git@github.com:stvkoch/ym4r_mapstraction.git
+ruby ym4r_mapstraction/install.rd
+
 
 As part of the installation procedure, the JavaScript files found in the <tt>PLUGIN_ROOT/javascript</tt> directory will be copied to the <tt>RAILS_ROOT/public/javascripts/</tt> directory. 
 

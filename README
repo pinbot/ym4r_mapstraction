@@ -47,6 +47,10 @@ Here I first clear the map of all markers. Then I add the marker. Note that the 
 
 ==Installation
 
+./script/plugin install git://github.com/stvkoch/ym4r_mapstraction.git
+
+or
+
 cd my_rails/vendor
 git clone git@github.com:stvkoch/ym4r_mapstraction.git
 ruby ym4r_mapstraction/install.rd

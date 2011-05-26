@@ -112,6 +112,10 @@ module Ym4r
       def to_s
         @variable + ";"
       end
+      #Ruby 1.9.2 wants to_str instead of to_s for Array#* in to_html
+      def to_str
+        @variable + ";"
+      end
 
       UNDEFINED = Variable.new("undefined")
     end

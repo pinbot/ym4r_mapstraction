@@ -116,7 +116,7 @@ module Ym4r
         a << "<script src=\"/javascripts/mapstraction.js\" type=\"text/javascript\"></script>\n"
         a << "<script src=\"/javascripts/mapstraction-route.js\" type=\"text/javascript\"></script>\n"
         a << "<script src=\"/javascripts/ym4r-mapstraction.js\" type=\"text/javascript\"></script>\n"
-        a
+        a.html_safe
       end
      
       #Outputs the <div id=...></div> which has been configured to contain the map. You can pass <tt>:width</tt> and <tt>:height</tt> as options to output this in the style attribute of the DIV element (you could also achieve the same effect by putting the dimension info into a CSS or using the instance method Mapstraction#header_width_height)
@@ -125,12 +125,12 @@ module Ym4r
         if options.has_key?(:height) && options.has_key?(:width)
           attributes += "style=\"width:#{options[:width]}px;height:#{options[:height]}px\""
         end
-        "<div #{attributes}></div>"
+        "<div #{attributes}></div>".html_safe
       end
 
       #Outputs a style declaration setting the dimensions of the DIV container of the map. This info can also be set manually in a CSS.
       def header_width_height(width,height)
-        "<style type=\"text/css\">\n##{@container} { height: #{height}px;\n  width: #{width}px;\n}\n</style>"
+        "<style type=\"text/css\">\n##{@container} { height: #{height}px;\n  width: #{width}px;\n}\n</style>".html_safe
       end
 
       #Records arbitrary JavaScript code and outputs it during initialization inside the +load+ function.
@@ -284,7 +284,7 @@ module Ym4r
           html << "<style>html, body {width: 100%; height: 100%} body {margin:0} ##{@container} {margin:0} </style>"
         end
                 
-        html
+        html.html_safe
       end
 
       #Outputs in JavaScript the creation of a Mapstraction object 
